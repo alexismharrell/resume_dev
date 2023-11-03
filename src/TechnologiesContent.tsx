@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { TechnologiesArray, Technology } from "./constants"
 import { useState } from "react"
+import useModal, { Modal } from "./Modal"
 
 const TechnologiesContentContainer = styled.div`
   width: 100%;
@@ -34,13 +35,13 @@ const TechnologySectionSubtext = styled.div`
   flex: 2;
 `
 
-export function TechnologiesContent() {
+export const TechnologiesContent = () => {
   const [selectedTech, setSelectedTech] = useState<Technology>()
-  const [isOpen, setIsOpen] = useState(false)
+  const { isOpen, toggle } = useModal()
 
   const handleTechSectionClick = (tech: Technology) => {
     setSelectedTech(tech)
-    setIsOpen(true)
+    toggle()
   }
 
   return (
@@ -48,7 +49,12 @@ export function TechnologiesContent() {
       <TechnologiesContentContainer>
         {TechnologiesArray.map((tech: Technology) => {
           return (
-            <TechnologySection onClick={() => handleTechSectionClick(tech)}>
+            <TechnologySection
+              aria-label={
+                "click to learn more about " + tech.name + " experience"
+              }
+              onClick={() => handleTechSectionClick(tech)}
+            >
               <TechnologySectionTitle>{tech.name}</TechnologySectionTitle>
               <TechnologySectionSubtext>
                 {tech.shortDescriptor}
@@ -57,6 +63,9 @@ export function TechnologiesContent() {
           )
         })}
       </TechnologiesContentContainer>
+      <Modal title={selectedTech?.name || ""} isOpen={isOpen} toggle={toggle}>
+        <div>{selectedTech?.longDescriptor}</div>
+      </Modal>
     </>
   )
 }

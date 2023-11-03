@@ -17,7 +17,7 @@ const ImageContainer = styled.div`
   flex: 1 !important;
 `
 
-export function AboutContent() {
+export const AboutContent = () => {
   return (
     <StyledBaseContentContainer>
       <ImageContainer>

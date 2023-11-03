@@ -51,7 +51,6 @@ export enum CurrentPageValue {
   about = "About",
   technologies = "Technologies",
   experience = "Experience",
-  contact = "Contact",
 }
 
 function App() {

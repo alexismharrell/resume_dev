@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { CurrentPageValue } from "./App"
 import { AboutContent } from "./AboutContent"
 import { TechnologiesContent } from "./TechnologiesContent"
+import React from "react"
+import { ExperienceContentComponent } from "./ExperienceContent"
 
 const ContentAreaMain = styled.div`
   display: flex;
@@ -35,15 +37,16 @@ export type ContentAreaProps = {
   currentPage: CurrentPageValue
 }
 
-export function ContentArea(props: ContentAreaProps) {
+export const ContentArea: React.FC<ContentAreaProps> = (props) => {
   return (
     <ContentAreaMain>
-        {props.currentPage === CurrentPageValue.about && (
-            <AboutContent/>
-        )}
-        {props.currentPage === CurrentPageValue.technologies && (
-            <TechnologiesContent />
-        )}
+      {props.currentPage === CurrentPageValue.about && <AboutContent />}
+      {props.currentPage === CurrentPageValue.technologies && (
+        <TechnologiesContent />
+      )}
+      {props.currentPage === CurrentPageValue.experience && (
+        <ExperienceContentComponent />
+      )}
     </ContentAreaMain>
   )
 }

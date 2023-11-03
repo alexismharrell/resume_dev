@@ -109,3 +109,60 @@ export const TechnologiesArray: Technology[] = [
       "Experience using tools such as Jenkins, SonarQube, and GitHub Actions to manage build pipelines. Experienced in using CI/CD tools to manage code quality and deploy releases.",
   },
 ]
+
+export type Experience = {
+  company: string
+  employedDates: string
+  title: string
+  location: string
+  responsibilities: string[]
+  summary: string
+  icon?: string
+}
+
+export const ExperienceArray: Experience[] = [
+  {
+    company: "Georgia Tech Research Institute",
+    employedDates: "Feb 2015 - June 2020",
+    title: "Research Scientist I",
+    location: "Atlanta, GA",
+    responsibilities: [
+      "Daily standups, weekly scrum/Kanban meetings",
+      "Full stack web development using Angular, Java (Tomcat + Jersey + Jackson), and Oracle DB",
+      "Self directed work out of sprint boards and JIRA ticket queues",
+      "Mentor students and new hires, manage student workloads, and participate in student recruitment",
+      "Acted as product and code owner of UI component library shared between two teams",
+    ],
+    summary:
+      "Full stack software developement on multiple teams focused on secure content management web applications. Used multiple technologies including Angular, LESS, Java (Tomcat + Jersey + Jackson), and Oracle DB.",
+  },
+  {
+    company: "T-Mobile USA",
+    employedDates: "June 2020 - Aug 2022",
+    title: "Software Engineer",
+    location: "Atlanta, GA",
+    responsibilities: [
+      "Daily standups, weekly scrum/Kanban meetings",
+      "Full stack web developer but mostly did front end web application development. Collaborated with multiple teams across organization to manage web application and microservices the application depended on",
+      "Self directed work out of sprint boards and JIRA ticket queues",
+      "Lead effort to modernize codebase from Angular 4 to Angular 12",
+      "Lead efforts to teach other developers on team the basics on Angular and modern web development",
+    ],
+    summary:
+      "Web application development for bespoke retail software for management of store inventory. Full stack development position that involved mostly front end development and collaboration with teams across the organization to manage microservice architecture.",
+  },
+  {
+    company: "Grindr",
+    employedDates: "Aug 2022 - Aug 2023",
+    title: "Software Engineer",
+    location: "Remote",
+    responsibilities: [
+      "Remote, self-directed work. Daily reports via asynchronous standups. Pulled work from JIRA Kanban boards.",
+      "Front end development for new Grindr product, Grindr Web. Self-taught React, Mobx, and MUI on job, and collaborated with other devs for anything I didn't understand.",
+      "Helped release a full web product to public",
+      "Collaborated across multiple teams including design, infra, and mobile on any new feature to make sure they met or exceeded expectations of end users.",
+    ],
+    summary:
+      "Web developer on new Grindr product, Grindr Web, using React + Mobx + MUI. Learned React as I went and collaborated across multiple teams to help deliver the product to public release.",
+  },
+]
